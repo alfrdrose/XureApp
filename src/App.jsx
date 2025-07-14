@@ -12,8 +12,6 @@ import {
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import bgImage from "@/assets/4.png"
-import xure from "../public/New-Xure-logo.png"
-import phone from "../public/XurePhones.png"
 import { Eye, EyeOff } from 'lucide-react'
 import { Loader2 } from 'lucide-react'
 import { FaGoogle, FaFacebookF, FaApple } from "react-icons/fa"
@@ -86,11 +84,11 @@ function LoginPage() {
     >
       <title>Xure App</title>
       <div className="w-1/3 h-[140px] flex items-start justify-start">
-        <img src={xure} alt="Xure Logo" className="h-[51px] mt-[53px] ml-[55px]" />
+        <img src="/New-Xure-Logo.png" alt="Xure Logo" className="h-[51px] mt-[53px] ml-[55px]" />
       </div>
       <div className="w-full flex h-full flex-row">
         <div className="flex flex-row">
-          <img src={phone} alt="XurePhones" className="h-full w-[850px] ml-[-80px] mr-[-190px]"/>
+          <img src="/XurePhones.png" alt="XurePhones" className="h-full w-[850px] ml-[-80px] mr-[-190px]"/>
           <div className="flex flex-col w-full leading-[48px] justify-center">
             <h2 className="text-[#CEAE7B] font-bold text-[48px]">UNLOCK</h2>
             <h2 className="text-white font-normal text-[48px]">YOUR INNER</h2>
