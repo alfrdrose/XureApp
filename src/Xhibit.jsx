@@ -1,5 +1,7 @@
 import { Input } from "@/components/ui/input";
 import { FiSearch, FiMenu, FiShare2 } from "react-icons/fi";
+import { FiMessageSquare } from "react-icons/fi";
+import { FiPlus } from "react-icons/fi";
 import { PiShoppingBagOpenBold } from "react-icons/pi";
 import { LuCalendarDays, LuUser } from "react-icons/lu";
 import { FaCheckDouble, FaRegComment, FaBell } from "react-icons/fa";
@@ -137,18 +139,29 @@ function Xhibit() {
       {/* Right Panel remains unchanged */}
       <div className="fixed right-0 top-0 h-screen w-[373px] border-l border-[#3F3F46] bg-[#030303] z-10 flex flex-col items-center">
         {/* Upload and profile area */}
-        <div className="w-[320px] mt-[30px] flex items-center justify-between">
-          <button className="w-[122px] h-[35px] bg-[#4C1D83] text-white text-[14px] font-semibold rounded hover:bg-[#6B21A8] transition-colors cursor-pointer">
-            Upload
+        <div className="w-[320px] mt-[30px] flex items-center justify-end gap-[20px]">
+          
+          <button className="w-[35px] h-[35px] bg-[#4C1D83] text-white rounded-full hover:opacity-[80%] transition-all cursor-pointer flex items-center justify-center">
+            <FiPlus size={18} />
           </button>
-          <FaBell size={20} className="text-white" />
+
+          
+            <FaBell size={20} className="text-white hover:scale-[105%] hover:text-[#CEAE7B] transition-all cursor-pointer" />
+          
+
+          {/* Messaging icon */}
+          
+            <FiMessageSquare size={20} className="text-white hover:scale-[105%] hover:text-[#CEAE7B] transition-all cursor-pointer" />
+          
+
           <div className="w-[40px] h-[40px] rounded-full overflow-hidden bg-[#3F3F46] flex items-center justify-center">
             <img
-              src="https://ui-avatars.com/api/?background=3F3F46&color=fff&name=U"
+              src="/chicken.jpg"
               alt="User Avatar"
               className="w-full h-full object-cover"
             />
           </div>
+
         </div>
 
         {/* Accounts */}
