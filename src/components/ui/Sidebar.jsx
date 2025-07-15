@@ -3,11 +3,17 @@ import { Link, useNavigate } from "react-router-dom";
 import { FiSearch, FiMenu } from "react-icons/fi";
 import { PiShoppingBagOpenBold } from "react-icons/pi";
 import { LuCalendarDays, LuUser } from "react-icons/lu";
+import { useState } from "react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 
 function Sidebar() {
   const navigate = useNavigate();
+  const [openDialog, setOpenDialog] = useState(false); 
+  const [showLogoutDialog, setShowLogoutDialog] = useState(false);
 
   return (
+    <>
     <div className="fixed left-0 top-0 h-screen w-[386px] border-r border-[#3F3F46] bg-[#030303] z-10 font-poppins">
       <img src="/New-Xure-Logo.png" alt="Xure Logo" className="h-[41px] mt-[53px] ml-[55px]" />
 
@@ -55,20 +61,58 @@ function Sidebar() {
         <div className="text-white w-full mt-[20px]">
           <div
             className="flex items-center gap-3 mb-6 cursor-pointer"
-            onClick={() => navigate("/profile")}
+            onClick={() => setOpenDialog(true)}
           >
             <LuUser size={20} />
             <span className="text-[14px] font-semibold">Profile</span>
           </div>
 
           <button 
-          onClick={() => navigate("/")}
-          className="w-full bg-[#4C1D83] text-white text-[14px] font-semibold py-2 rounded-xl hover:bg-[#6B21A8] transition-colors cursor-pointer">
+          onClick={() => setShowLogoutDialog(true)}
+          className="w-full bg-[#4C1D83] text-white text-[14px] font-semibold py-2 rounded-md hover:bg-[#6B21A8] transition-colors cursor-pointer">
             Log out
           </button>
         </div>
       </div>
     </div>
+     {/* Dialog */}
+      <Dialog open={openDialog} onOpenChange={setOpenDialog}>
+        <DialogContent className="bg-[#18181B] border-none text-white">
+          <DialogHeader>
+            <DialogTitle className="text-[#CEAE7B]">Under Construction</DialogTitle>
+          </DialogHeader>
+          <p className="text-sm">The Profile section is currently under development. Please check back soon.</p>
+        </DialogContent>
+      </Dialog>
+
+      {/* Logout modal */}
+      <Dialog open={showLogoutDialog} onOpenChange={setShowLogoutDialog}>
+        <DialogContent className="bg-[#18181B] border-none text-white">
+          <DialogHeader>
+            <DialogTitle className="text-[#CEAE7B]">Confirm Logout</DialogTitle>
+          </DialogHeader>
+          <p className="text-sm">Are you sure you want to log out?</p>
+          <DialogFooter className="flex justify-end gap-2 mt-4">
+            <Button 
+              variant="outline" 
+              onClick={() => setShowLogoutDialog(false)} 
+              className="cursor-pointer bg-transparent border border-gray-600 text-white hover:bg-gray-700"
+            >
+              Cancel
+            </Button>
+            <Button 
+              onClick={() => {
+                setShowLogoutDialog(false);
+                navigate("/");
+              }} 
+              className="cursor-pointer bg-[#4C1D83] text-white hover:bg-[#7e22ce]"
+            >
+              Yes, log out
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+      </>
   );
 }
 

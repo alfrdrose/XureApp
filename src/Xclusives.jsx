@@ -1,10 +1,12 @@
 import Sidebar from '@/components/ui/Sidebar';
 import BoxBreaking from './components/BoxBreaking';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from "react";
 
 function Xclusives() { 
     const [activeToggle, setActiveToggle] = useState('A');
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <div className="min-h-screen bg-[#030303] text-white">
             <title>Xure App | The Xclusives</title>

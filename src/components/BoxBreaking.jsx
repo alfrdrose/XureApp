@@ -12,7 +12,7 @@ function BoxBreaking() {
     }, [fetchItems]);
 
   return (
-    <div className="pb-[500px]">
+    <div className="pb-[50px]">
       <div className="w-[1020px] h-[200px] bg-white rounded-md overflow-hidden mb-[20px]">
         <img
           src="/boxbreaking.jpg"
@@ -66,7 +66,6 @@ function BoxBreaking() {
       </div>
 
     {/* Box breaking cards container */}
-    {/* Box breaking cards container */}
 <div className="w-[1020px] grid grid-cols-2 gap-4 mt-[20px]">
   {/* Card */}
   {isLoading
@@ -74,7 +73,7 @@ function BoxBreaking() {
               : card.map((card) => (
     <div
       key={card.id}
-      className="bg-[#18181B] rounded-md h-[380px] overflow-hidden shadow-md"
+      className="bg-[#18181B] rounded-md h-[380px] overflow-hidden shadow-md hover:scale-[105%] transition-all cursor-pointer flex flex-col"
     >
       <div className="h-[200px] w-full">
         <img

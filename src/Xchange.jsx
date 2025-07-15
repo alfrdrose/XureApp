@@ -11,6 +11,10 @@ function Xchange() {
     fetchItems();
   }, [fetchItems]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#030303] text-white">
       <title>Xure App | The Xchange</title>
@@ -27,18 +31,18 @@ function Xchange() {
               <input
                 type="search"
                 placeholder="Tell us what you are looking for..."
-                className="w-full h-full pl-10 pr-3 text-[12px] rounded-md border border-[#3F3F46] bg-[#18181B] text-white focus:outline-none focus:ring-2 focus:ring-[#CEAE7B]"
+                className="w-full h-full pl-10 pr-3 text-[14px] rounded-md border border-[#3F3F46] bg-[#18181B] text-white focus:outline-none focus:ring-2 focus:ring-[#CEAE7B]"
               />
             </div>
 
-            <div className="flex items-center gap-2 ml-[25px] mt-[45px]">
+            <div className="flex items-center gap-2 ml-[25px] mt-[35px]">
               <div className="flex items-center gap-2 text-white text-[14px] font-semibold cursor-pointer hover:text-[#CEAE7B] transition-colors">
                 <FiGrid size={20} />
                 <span>All</span>
               </div>
             </div>
 
-            <div className="flex items-center gap-2 ml-[25px] mt-[45px]">
+            <div className="flex items-center gap-2 ml-[25px] mt-[35px]">
               <div className="flex items-center gap-2 text-white text-[14px] font-semibold cursor-pointer hover:text-[#CEAE7B] transition-colors">
                 <FiFilter size={20} />
                 <span>Filter</span>
