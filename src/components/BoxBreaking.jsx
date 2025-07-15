@@ -70,7 +70,11 @@ function BoxBreaking() {
   {/* Card */}
   {isLoading
               ? Array(8).fill().map((_, index) => <ShimmerBoxBreak key={card.id}/>)
-              : card.map((card) => (
+              : card.length === 0 ? (
+                <div className="w-[1020px] flex justify-center items-center text-white text-sm font-medium min-h-[200px]">
+                  No events found.
+                </div>
+              ) : card.map((card) => (
     <div
       key={card.id}
       className="bg-[#18181B] rounded-md h-[380px] overflow-hidden shadow-md hover:scale-[105%] transition-all cursor-pointer flex flex-col"

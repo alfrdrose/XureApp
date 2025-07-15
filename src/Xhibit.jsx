@@ -60,6 +60,10 @@ function Xhibit() {
               <ShimmerPost />
               <ShimmerPost />
             </>
+          ) : posts.length === 0 ? (
+            <div className="w-full flex justify-center items-center text-white text-sm font-medium min-h-[200px]">
+              No posts found.
+            </div>
           ) : (
             posts.map((post) => (
               <div

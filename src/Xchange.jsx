@@ -54,7 +54,11 @@ function Xchange() {
           <div className="mt-[30px] min-h-[340px] w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[20px] p-[5px]">
             {isLoading
               ? Array(8).fill().map((_, index) => <ShimmerCard key={index} />)
-              : items.map((item) => (
+              : items.length === 0 ?(
+                <div className="w-[1020px] flex justify-center items-center text-white text-sm font-medium min-h-[200px]">
+                  No items found.
+                </div>
+              ) :  items.map((item) => (
                   <div
                     key={item.id}
                     className="relative bg-[#18181B] h-[360px] w-full rounded-2xl overflow-hidden hover:scale-[105%] transition-all cursor-pointer"
